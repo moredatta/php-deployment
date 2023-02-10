@@ -34,3 +34,5 @@ pipeline{
                 echo 'Successfully Pushed'
             }
         }
+    }
+}
