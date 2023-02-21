@@ -33,15 +33,12 @@ pipeline {
 			}
 		
 	      stage('SonarQube analysis') {
-	//def scannerHome = tool 'SonarScanner 4.0';
-		steps{
-		      tools {
-        sonarQube 'SonarQube Scanner 2.8'
-      }
-        	
-        	withSonarQubeEnv('sonarqube-9.8') { 
-        // If you have configured more than one global server connection, you can specify its name
-	//   sh "${scannerHome}/bin/sonar-scanner"
+      steps {
+        script {
+          // requires SonarQube Scanner 2.8+
+          scannerHome = tool 'SonarQubeScanner-4.8.0'
+        }
+        withSonarQubeEnv('sonarqube-9.8') {
 			sh "${scannerHome}/bin/sonar-scanner \
 			 -Dsonar.host.url=http://34.100.210.20:9000 \
  			 -Dsonar.projectKey=smartsuite \
