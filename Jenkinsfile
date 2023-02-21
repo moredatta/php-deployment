@@ -59,6 +59,13 @@ pipeline {
 		'''
 	      }
 	    }
+	  stage('push') {
+	      steps {
+		sh '''
+		  docker push moredatta574/jenkins-php 
+		'''
+	      }
+	    }
 	  
 	    stage('pull'){
 		    steps{
