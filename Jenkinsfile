@@ -52,6 +52,13 @@ pipeline {
     
         }
         }
+	  stage('build') {
+	      steps {
+		sh '''
+		  docker build -t moredatta574/jenkins-php .
+		'''
+	      }
+	    }
 	  
 	    stage('pull'){
 		    steps{
