@@ -33,7 +33,7 @@ pipeline {
 			}
 		
 	      stage('SonarQube analysis') {
-	def scannerHome = tool 'SonarScanner 4.0';
+	      def scannerHome = tool 'SonarScanner 4.0';
         	steps{
 		
         	withSonarQubeEnv('sonarqube-9.8') { 
@@ -44,7 +44,7 @@ pipeline {
 			 -Dsonar.host.url=http://34.100.210.20:9000 \
  			 -Dsonar.projectKey=smartsuite \
   			 -Dsonar.login=admin \
-			 -Dsonar.password=test \
+			 -Dsonar.password=test 
  			
  			
 		'''
