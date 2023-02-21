@@ -9,4 +9,4 @@ spec:
         - image: moredatta574/jenkins-php 
           ports:
             - name: http1
-              containerPort: 8090
+              containerPort: 80
