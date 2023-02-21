@@ -33,20 +33,21 @@ pipeline {
 			}
 		
 	      stage('SonarQube analysis') {
-	      	def scannerHome = tool 'SonarScanner 4.0';
+	def scannerHome = tool 'SonarScanner 4.0';
+		      steps{
         	
         	withSonarQubeEnv('sonarqube-9.8') { 
         // If you have configured more than one global server connection, you can specify its name
 	//   sh "${scannerHome}/bin/sonar-scanner"
-       		sh '''
-			${scannerHome}/bin/sonar-scanner \
+			sh "${scannerHome}/bin/sonar-scanner \
 			 -Dsonar.host.url=http://34.100.210.20:9000 \
  			 -Dsonar.projectKey=smartsuite \
   			 -Dsonar.login=admin \
-			 -Dsonar.password=test 
+			 -Dsonar.password=test"
  			
  			
-		'''
+		
+		}
     
         }
         }
