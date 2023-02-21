@@ -34,6 +34,7 @@ pipeline {
 		
 	      stage('SonarQube analysis') {
 	//def scannerHome = tool 'SonarScanner 4.0';
+		steps{
 		      tools {
         sonarQube 'SonarQube Scanner 2.8'
       }
@@ -46,6 +47,7 @@ pipeline {
  			 -Dsonar.projectKey=smartsuite \
   			 -Dsonar.login=admin \
 			 -Dsonar.password=test"
+		}
  			
  			
 		
