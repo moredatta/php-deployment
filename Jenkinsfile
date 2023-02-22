@@ -40,7 +40,7 @@ pipeline {
         }
         withSonarQubeEnv('sonarqube-9.8') {
 			sh "${scannerHome}/bin/sonar-scanner \
-			 -Dsonar.host.url=http://34.100.210.20:9000 \
+			 -Dsonar.host.url=http://35.200.157.184:9000 \
  			 -Dsonar.projectKey=smartsuite \
   			 -Dsonar.login=admin \
 			 -Dsonar.password=test"
